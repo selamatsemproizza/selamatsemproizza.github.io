@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Selamat Seminar Proposal!</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,500&family=Plus+Jakarta+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <!-- Menghubungkan ke file CSS -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- Kanvas untuk Animasi Konfeti -->
+  <canvas id="confetti-canvas"></canvas>
+
+  <main class="stage">
+    <div class="card-container">
+
+      <!-- SAMPUL DEPAN KERTAS -->
+      <div class="paper-cover" id="paperCover" onclick="openCard()">
+        <div class="wax-seal">SP</div>
+        <span class="cover-label">Special Note</span>
+        <h2 class="cover-title">Untuk Pejuang<br>Seminar Proposal</h2>
+        <p class="cover-hint">Ketuk kertas untuk membuka</p>
+      </div>
+
+      <!-- ISI DALAM KERTAS -->
+      <div class="card-inner">
+
+        <!-- ==========================================
+             HALAMAN 1: FOTO & UCAPAN SELAMAT
+             ========================================== -->
+        <section class="page active" id="page1">
+          <div>
+            <span class="badge">Milestone Unlocked</span>
+
+            <!-- GANTI 'foto-teman.jpg' SESUAI NAMA FILE FOTO -->
+            <div class="photo-frame">
+              <img
+                src="gambar/1semproizza.jpg"
+                alt="Foto izza"
+                onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22200%22 height=%22200%22 viewBox=%220 0 200 200%22><rect width=%22200%22 height=%22200%22 fill=%22%23f1ede4%22/><text x=%2250%25%22 y=%2252%25%22 dominant-baseline=%22middle%22 text-anchor=%22middle%22 font-family=%22sans-serif%22 font-size=%2214%22 fill=%22%239e7338%22>Foto Temanmu</text></svg>'"
+              />
+            </div>
+
+            <h1>Selamat Seminar Proposal!</h1>
+
+            <!-- GANTI NAMA & GELAR INCARAN TEMAN DI SINI -->
+            <p class="friend-name">Izza Khoirun Nisa, S.Ak. (Soon)</p>
+
+            <!-- GANTI ISI UCAPAN DI SINI -->
+            <p class="message">
+              Satu tahap besar akhirnya terlewati dengan lancar ya bestt! Semoga revisinya bersahabat,
+              proses penelitian dan skripsinya dimudahkan, dan segera menyusul gelar sarjana di belakang namamu.
+            </p>
+          </div>
+
+          <div class="btn-group">
+            <button class="btn btn-outline" onclick="launchConfetti()">🎉 Konfeti</button>
+            <button class="btn btn-primary" onclick="goToPage(2)">Lihat Hadiah →</button>
+          </div>
+        </section>
+
+        <!-- ==========================================
+             HALAMAN 2: QR CODE HADIAH
+             ========================================== -->
+        <section class="page" id="page2">
+          <div>
+            <span class="badge">Apresiasi Kecil</span>
+            <h1>Kado Jajan Sempro</h1>
+            <p class="qr-note">
+              Scan QR Code di bawah ini best untuk traktiran kopi dari ku sebagai pelepas penat setelah sidang!
+            </p>
+
+            <!-- GANTI 'qrcode-hadiah.png' SESUAI NAMA FILE QR CODE -->
+            <div class="qr-box">
+              <img
+                src="gambar/traktiran.jpeg"
+                alt="QR Code Hadiah"
+                onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22210%22 height=%22210%22 viewBox=%220 0 210 210%22><rect width=%22210%22 height=%22210%22 fill=%22%23f8fafc%22/><rect x=%2220%22 y=%2220%22 width=%2255%22 height=%2255%22 fill=%22none%22 stroke=%22%231e293b%22 stroke-width=%226%22/><rect x=%22135%22 y=%2220%22 width=%2255%22 height=%2255%22 fill=%22none%22 stroke=%22%231e293b%22 stroke-width=%226%22/><rect x=%2220%22 y=%22135%22 width=%2255%22 height=%2255%22 fill=%22none%22 stroke=%22%231e293b%22 stroke-width=%226%22/><text x=%2250%25%22 y=%2252%25%22 dominant-baseline=%22middle%22 text-anchor=%22middle%22 font-family=%22sans-serif%22 font-size=%2213%22 fill=%22%2364748b%22>Letakkan QR Code di Sini</text></svg>'"
+              />
+            </div>
+
+            <p class="qr-note qr-subnote">
+              Silahkan scan pakai dana ya besttt
+            </p>
+          </div>
+
+          <div class="btn-group">
+            <button class="btn btn-outline" onclick="goToPage(1)">← Kembali</button>
+            <button class="btn btn-primary" onclick="launchConfetti()">Rayakan Lagi ✨</button>
+          </div>
+        </section>
+
+      </div>
+    </div>
+  </main>
+
+  <!-- Menghubungkan ke file JavaScript -->
+  <script src="script.js"></script>
+</body>
+</html>
